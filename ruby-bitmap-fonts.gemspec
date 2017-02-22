@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'ruby/bitmap/fonts/version'
+require 'bdf.rb'
 
 Gem::Specification.new do |spec|
   spec.name          = "ruby-bitmap-fonts"
-  spec.version       = Ruby::Bitmap::Fonts::VERSION
+  spec.version       = BDF::VERSION
   spec.authors       = ["Markus Fenske"]
   spec.email         = ["iblue@gmx.net"]
 

@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "ruby/bitmap/fonts"
+require "bdf"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
