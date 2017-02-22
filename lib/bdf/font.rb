@@ -15,6 +15,12 @@ module BDF
       Char.new(@chars[name])
     end
 
+    def glyph(char)
+      Char.new(@chars.find do |char_|
+        char_[:encoding] == char.ord
+      end)
+    end
+
     attr_reader :version, :name, :size, :x_resolution, :y_resolution,
       :bounding_box_x, :bounding_box_y, :displacement_x, :displacement_y,
       :properties

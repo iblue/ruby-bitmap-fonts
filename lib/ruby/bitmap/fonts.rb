@@ -1,4 +1,7 @@
 require "bdf/font"
+require "bdf/char"
+require "bdf/renderer"
+require "bdf/canvas"
 require "ruby/bitmap/fonts/version"
 require "byebug"
 
