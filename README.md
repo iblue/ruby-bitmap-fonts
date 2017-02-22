@@ -52,12 +52,6 @@ end.join("\n")
 
 ```
 
-
-result = canvas.to_a.map do |line|
-  line.map { |x| x == 1 ? "#" : " " }.join
-end
-
-
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies.
