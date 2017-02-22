@@ -1,4 +1,6 @@
+require "bdf/font"
 require "ruby/bitmap/fonts/version"
+require "byebug"
 
 module Ruby
   module Bitmap
