@@ -16,9 +16,11 @@ module BDF
     end
 
     def glyph(char)
-      Char.new(@chars.find do |char_|
+      # TODO: We could use a glyph list here to get the name from unicode point
+      name, _ = @chars.find do |name, char_|
         char_[:encoding] == char.ord
-      end)
+      end
+      char(name)
     end
 
     attr_reader :version, :name, :size, :x_resolution, :y_resolution,

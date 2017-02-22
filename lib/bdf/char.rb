@@ -6,14 +6,13 @@ module BDF
       @dwidth   = opts[:dwidth]
       @bbx      = opts[:bbx]
       @bitmap   = parse(opts[:bitmap])
-      byebug
     end
 
     def render(canvas, cursor)
-      bitmap.each_with_index do |line, y|
-        line.each do |val, x|
+      @bitmap.each_with_index do |line, y|
+        line.each_with_index do |val, x|
           if val == 1
-            canvas.set(x+cursor[0]+@bbx[:x], y+cursor[1]+@bbx[:y])
+            canvas.set(x+cursor[0]+@bbx[:off_x], y+cursor[1]+@bbx[:off_y])
           end
         end
       end

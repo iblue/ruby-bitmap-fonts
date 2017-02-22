@@ -4,7 +4,10 @@ module BDF
       font = opts[:font]
 
       # Get baseline for initial cursor
-      cursor = [0, font.bounding_box_y + font.displacement_y]
+      cursor = [0, -font.displacement_y]
+
+      # Initial size of one char. resizes automatically
+      canvas = Canvas.new(font.bounding_box_x, font.bounding_box_y)
 
       text.chars.each do |char|
         # Lookup glyph
@@ -12,6 +15,10 @@ module BDF
 
         cursor = glyph.render(canvas, cursor)
       end
+
+      byebug
+
+      canvas
     end
   end
 end
