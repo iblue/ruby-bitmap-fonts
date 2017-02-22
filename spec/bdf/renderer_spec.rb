@@ -11,8 +11,6 @@ RSpec.describe BDF::Font do
         line.map { |x| x == 1 ? "#" : " " }.join
       end
 
-      byebug
-
       expect(result).to eq([
         "                                                                 ",
         "    #                                                            ",

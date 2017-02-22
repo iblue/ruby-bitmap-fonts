@@ -1,11 +1,7 @@
 # ruby-bitmap-fonts
 
-This gem allows to render bitmap fonts in the BDF format.
-
-Welcome to your new gem! In this directory, you'll find the files you
-need to be able to package up your Ruby library into a gem. Put your
-Ruby code in the file `lib/ruby/bitmap/fonts`. To experiment with that
-code, run `bin/console` for an interactive prompt.
+This gem allows you to render text using BDF (<i>Glyph
+Bitmap Distribution Format</i>) fonts.
 
 ## Installation
 
@@ -25,7 +21,42 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+This is an early alpha version, so this is the documentation:
+
+```
+my_string = "just a test"
+
+font   = BDF::Font.from_file("fixtures/ter-u12b.bdf")
+canvas = BDF::Renderer.render(my_string, :font => font)
+
+# => canvas.to_a now contains a 2-dimensional array with ones and
+zeroes, representing the pixel values
+
+puts canvas.to_a.map do |line|
+  line.map { |x| x == 1 ? "#" : " " }.join
+end.join("\n")
+
+# Prints:
+#
+#    #
+#    #               #                       #                 #
+#                    #                       #                 #
+#   ## #   #  ####  ###         ###         ###   ###   ####  ###
+#    # #   # #       #             #         #   #   # #       #
+#    # #   #  ###    #          ####         #   #####  ###    #
+#    # #   #     #   #         #   #         #   #         #   #
+#    # #   #     #   #         #   #         #   #         #   #
+#    #  #### ####     ##        ####          ##  #### ####     ##
+# #  #
+#  ##
+
+```
+
+
+result = canvas.to_a.map do |line|
+  line.map { |x| x == 1 ? "#" : " " }.join
+end
+
 
 ## Development
 
