@@ -16,8 +16,6 @@ module BDF
         cursor = glyph.render(canvas, cursor)
       end
 
-      byebug
-
       canvas
     end
   end
