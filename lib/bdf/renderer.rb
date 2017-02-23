@@ -10,6 +10,12 @@ module BDF
       canvas = Canvas.new(font.bounding_box_x, font.bounding_box_y)
 
       text.chars.each do |char|
+        if char == "\n"
+          cursor[0] = 0
+          cursor[1] += font.bounding_box_y
+          next
+        end
+
         # Lookup glyph
         glyph = font.glyph(char)
 
